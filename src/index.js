@@ -1,4 +1,6 @@
 import 'newrelic'
+import fs from 'fs';
+import path from 'path';
 import http from 'http';
 import express from 'express';
 import cors from 'cors';
@@ -18,7 +20,8 @@ let app = express();
 app.server = http.createServer(app);
 
 // logger
-app.use(morgan('dev'));
+const accessLogStream = fs.createWriteStream(path.join(__dirname, 'access.log'), { flags: 'a' })
+app.use(morgan('dev', { stream: accessLogStream }));
 
 app.use('/media', express.static(__dirname + config[config.platform].assetPath))
 

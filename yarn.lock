@@ -3165,9 +3165,9 @@ magento2-rest-client@0.0.2:
     request "^2.72.0"
     winston "^2.2.0"
 
-"magento2-rest-client@github:DivanteLtd/magento2-rest-client":
+"magento2-rest-client@github:Igloczek/magento2-rest-client#bebio":
   version "0.0.8"
-  resolved "https://codeload.github.com/DivanteLtd/magento2-rest-client/tar.gz/30a67752e65a8d02eac3c7caa1ace51ea2c5f815"
+  resolved "https://codeload.github.com/Igloczek/magento2-rest-client/tar.gz/2b1a11ce7dec8942c60e08ee96cb1d95819db440"
   dependencies:
     humps "^1.1.0"
     oauth-1.0a "^1.0.1"
