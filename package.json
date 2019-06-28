@@ -79,7 +79,6 @@
     "migrate": "^1.6.2",
     "mime-types": "^2.1.18",
     "morgan": "^1.9.0",
-    "newrelic": "^5.9.0",
     "nodemailer": "^4.6.8",
     "oauth-1.0a": "^1.0.1",
     "pm2": "^2.10.4",
