@@ -6,6 +6,8 @@ const es = require('../src/lib/elastic')
 const fs = require('fs')
 const path = require('path')
 
+const slugify = require('../helpers/slugify')
+
 program
   .command('redirects')
   .option('-i|--indexName <indexName>', 'name of the Elasticsearch index', config.elasticsearch.indices[0])
@@ -36,9 +38,9 @@ program
         for (const hit of hits) {
           const product = hit._source
           if (cmd.oldFormat) {
-            redirects.push(`/${product.url_key} /p/${decodeURIComponent(product.sku)}/${product.url_key}/${decodeURIComponent(product.sku)};`)
+            redirects.push(`/${product.url_key} /p/${slugify(product.parentSku ? product.parentSku : product.sku)}/${product.url_key}/${slugify(product.sku)};`)
           } else {
-            redirects.push(`/${product.url_key} /${product.url_key}/${decodeURIComponent(product.sku)};`)
+            redirects.push(`/${product.url_key} /${product.url_key}/${slugify(product.sku)};`)
           }
         }
       })
